@@ -1,0 +1,26 @@
+data={
+     1:{'name':'srav', 'exam_status':True,'python':100,'sql':96,'CSS':79},
+     2:{'name':'hema', 'exam_status':True,'python':90,'sql':86,'CSS':67},
+     3:{'name':'vish', 'exam_status':True,'python':78,'sql':57,'CSS':99},
+     4:{'name':'rama', 'exam_status':True,'python':60,'sql':98,'CSS':57},
+     5:{'name':'krish','exam_status':False,'python':80,'sql':47,'CSS':80},
+}
+for i in data.keys():
+  print(f'{i}. {data[i]["name"]}')
+
+stuid=int(input("Enter the stydent id:"))
+if stuid in data:
+  if data[stuid]["exam_status"]: #print(data[stuid])'''
+    total=(data[stuid]["python"]+data[stuid]["sql"]+data[stuid]["CSS"])/3
+    if total>90:
+      print(f'Congrats!!!\n{data[stuid]["name"]} got "A" grade')
+    elif total>75:
+      print(f'Congrats!!!\n{data[stuid]["name"]} got "B" grade')
+    elif total>45:
+      print(f'Need Improvement!!!\n{data[stuid]["name"]} got "C" grade')
+    else:
+     print(f'{data[stuid]["name"]} -Fail, Better luck next Time!!!!')
+  else:
+    print(f"{data[stuid]['name']} is not attempted the exams")
+else:
+  print("student id not present please try later:")      

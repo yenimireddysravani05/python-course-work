@@ -22,7 +22,7 @@ for i in range(20,1,-2):
     print(i)
 'Multiplication............................................................_4'
 for i in range(1,21):
- print(f"15*{i}={15*i}")'''
+ print(f"15*{i}={15*i}")
 'WHILE LOOP EXAMPLES************************************************************************************************************************************************'
 'Example1:'
 email,pwd='vis@gmail.com','vish@123'
@@ -39,4 +39,9 @@ while cur_attempts<=max_attempts:
      cur_attempts=cur_attempts+1
 else:
   print("Max attempts are done..try again")
-  
+'ex1------------------------------------------------------------------------------------------------------------------------'''
+bullets=5
+while bullets>0:
+  print("shoot()")
+else:
+  print("Game over")

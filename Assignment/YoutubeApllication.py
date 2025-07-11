@@ -1,6 +1,6 @@
 video_id = 1025
 video_title = "Learning Python in 30 Minutes"
-duration = 29.75 
+duration = 30.00
 tags = ["Python", "Tutorial", "Beginner", "Programming"]
 metrics = (105000, 9800)  
 like_ratio = 93.3 

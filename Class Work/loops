@@ -1,4 +1,4 @@
-data={
+'''data={
      1:{'name':'srav', 'exam_status':True,'python':100,'sql':96,'CSS':79},
      2:{'name':'hema', 'exam_status':True,'python':90,'sql':86,'CSS':67},
      3:{'name':'vish', 'exam_status':True,'python':78,'sql':57,'CSS':99},
@@ -10,7 +10,7 @@ for i in data.keys():
 
 stuid=int(input("Enter the stydent id:"))
 if stuid in data:
-  if data[stuid]["exam_status"]: #print(data[stuid])'''
+  if data[stuid]["exam_status"]: #print(data[stuid])
     total=(data[stuid]["python"]+data[stuid]["sql"]+data[stuid]["CSS"])/3
     if total>90:
       print(f'Congrats!!!\n{data[stuid]["name"]} got "A" grade')
@@ -23,4 +23,93 @@ if stuid in data:
   else:
     print(f"{data[stuid]['name']} is not attempted the exams")
 else:
-  print("student id not present please try later:")      
+  print("student id not present please try later:") 
+
+  #example2 ROCK PAPER Scissor
+import random
+
+print('1.Rock')
+print('2.Paper')
+print('3.Scissors')
+
+while True:
+    ch=int(input("Enter your choice(0-Exit): "))
+    if ch==0:
+        print("Game over")
+        break
+
+
+    elif ch==1:
+        com=random.randint(1,3)
+        if com==1:
+            print("Computer choice:",com)
+            print('Tie both choose the rock')
+        elif com==2:
+            print("Computer choice:",com)
+            print("Computer Wins")
+        elif com==3:
+            print("Computer choice:",com)
+            print("COngrats You Win")
+
+
+
+    elif ch==2:
+        com=random.randint(1,3)
+        if com==1:
+            print("Computer choice:",com)            
+            print("Congrats You Win")
+        elif com==2:
+            print("Computer choice:",com)            
+            print('Tie both choose the paper')
+        elif com==3:
+            print("Computer choice:",com)
+
+            print("Computer Wins")
+    elif ch==3:
+        com=random.randint(1,3)
+        if com==1:
+            print("Computer choice:",com)            
+            print("Computer Wins")
+        elif com==2:
+            print("Computer choice:",com)            
+            print("Congrats You Win")
+        elif com==3:
+            print("Computer choice:",com)            
+            print('Tie both choose the paper')
+
+    else:
+        print("Invalid choice. Try Again!!!") 
+#
+items = {1: "dairy", 2: "dairy milk", 3: "chocolate", 4: "sprit", 5: "milk"}
+d = input("Enter the product indexes you want to buy, separated by commas: ")
+indexes = list(map(int, d(',')))
+for index in indexes:
+    if index in items:
+        print(items[index])
+    else:
+        print(f"Item with index {index} not found.")'''
+data={
+    1:{'name':'rice','price':50},
+    2:{'name':'wheat flour','price':450},
+    3:{'name':'sugar','price':40},
+    4:{'name':'milk','price':25},
+    5:{'name':'eggs','price':70},
+    6:{'name':'cooking','price':130},
+    7:{'name':'tea powder','price':90},
+    8:{'name':'salt','price':20},
+    9:{'name':'bread','price':30},
+    10:{'name':'soap','price':50},
+  }
+for i in range(1,11):
+  print(f'{i}. {(data[i]["name"]).ljust(15," ")}:{data[i]["price"]}')
+items=list(map(int,input("Enter the indexes:").split()))
+print(items)
+total=0
+ids=set()
+for i in items:
+  if i not in ids:
+    co=items.count(i)
+    total+=(data[i]["price"]*co)
+    print(f'{data[i]["name"]}-{co}*{data[i]["price"]}={data[i]["price"]}*{data[i]["name"]}')
+    ids.add(i)
+print("Total Bill:",total)

@@ -1,0 +1,78 @@
+#ex1:
+for i in range(3):
+  for j in range(2):
+    print(i,end="")
+  print()
+#ex2
+for row in range(5):
+  for col in range(5):
+    print("*",end="")
+  print()
+#ex3
+for i in range(5):
+  for j in range(5):
+    print(i,end="")
+  print()
+#ex4
+for i in range(5):
+  for j in range(5):
+    print(j,end="")
+  print() 
+#ex5
+for i in range(5):
+  for j in range(i+1):
+    print("*",end="")
+  print()
+#ex6
+for i in range(5):
+  for j in range(5-i):
+    print("*",end="")
+  print()
+#ex7
+for i in range(5):
+  for j in range(5-i-1):
+    print(" ",end="")
+  for k in range(i+1):
+    print("*",end="")
+  print()
+#ex8
+for i in range(5):
+  for j in range(i+1):
+    print(" ",end="")
+  for k in range(5-i):
+    print("*",end="")
+  print()
+#ex9
+n=int(input("Enter the number"))
+for i in range(n):
+  for j in range(n):
+    if i==0 or j==0 or i==n-1 or j==n-1:
+     print("*",end="")
+    else:
+      print(" ",end="")
+  print()
+#ex10
+for i in range(n):
+  for j in range(n):
+   if i==0 or j==0 or i==n-1 or j==n-1 or i==2 or i==4: #i==n//2
+    print("*",end="")
+   else:
+    print(" ",end="")
+  print()
+#ex11
+for i in range(n):
+  for j in range(n):
+   if i==0 or i==n-1 or i+j==n-1: 
+    print("*" ,end="")
+   else:
+    print(" ",end="")
+  print()
+#ex12
+for i in range(n):
+  for j in range(n):
+   if i==0 or i==n-1 or i+j==n-1 or i==j: 
+    print("*" ,end="")
+   else:
+    print(" ",end="")
+  print()
+#ex13

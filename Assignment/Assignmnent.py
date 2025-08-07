@@ -1,9 +1,6 @@
-# Step 1: Input messages
 messages = []
 user_messages = {}
-
 n = int(input("Enter the number of messages: "))
-
 for i in range(n):
     msg = input(f"Enter message {i+1}: ")
     messages.append(msg)
@@ -15,10 +12,8 @@ for i in range(n):
         if name not in user_messages:
             user_messages[name] = []
         user_messages[name].append(text)
-
-# Step 2: Start analysis menu with while loop
 while True:
-    print("\nMenu Options:")
+    print("Menu Options")
     print("1. Total messages")
     print("2. Unique users")
     print("3. Total words")
@@ -39,12 +34,12 @@ while True:
     print("19. Check for deleted messages")
     print("0. Exit")
 
-    choice = input("Enter your choice: ")
+    ch = input("Enter your choice: ")
 
-    if choice == "1":
+    if ch == "1":
         print("Total messages:", len(messages))
 
-    elif choice == "2":
+    elif ch == "2":
         users = set()
         for m in messages:
             if ":" in m:
@@ -52,7 +47,7 @@ while True:
                 users.add(name)
         print("Unique users in the chat:", users)
 
-    elif choice == "3":
+    elif ch == "3":
         total = 0
         for m in messages:
             parts = m.split(":", 1)
@@ -61,7 +56,7 @@ while True:
                 total += len(words)
         print("Total words in the chat:", total)
 
-    elif choice == "4":
+    elif ch == "4":
         total = 0
         for m in messages:
             parts = m.split(":", 1)
@@ -71,14 +66,14 @@ while True:
         avg = total / len(messages) if messages else 0
         print("Average words per message:", round(avg, 2))
 
-    elif choice == "5":
+    elif ch == "5":
         max_msg = ""
         for m in messages:
             if len(m) > len(max_msg):
                 max_msg = m
         print("Longest message:", max_msg)
 
-    elif choice == "6":
+    elif ch == "6":
         max_count = 0
         top_user = ""
         for u in user_messages:
@@ -87,14 +82,14 @@ while True:
                 top_user = u
         print(f"Most active user: {top_user} ({max_count} messages)")
 
-    elif choice == "7":
+    elif ch == "7":
         u = input("Enter user name: ")
         if u in user_messages:
             print(f"Messages sent by {u}: {len(user_messages[u])}")
         else:
             print(f"User '{u}' not found.")
 
-    elif choice == "8":
+    elif ch == "8":
         u = input("Enter user name: ")
         if u in user_messages:
             word_count = {}
@@ -109,7 +104,7 @@ while True:
         else:
             print("User not found.")
 
-    elif choice == "9":
+    elif ch == "9":
         u = input("Enter user name: ")
         first = ""
         last = ""
@@ -124,14 +119,14 @@ while True:
         else:
             print("No messages from that user.")
 
-    elif choice == "10":
+    elif ch == "10":
         u = input("Enter user to check: ")
         if u in user_messages:
             print(f"User '{u}' is present in the chat.")
         else:
             print(f"User '{u}' not found in the chat.")
 
-    elif choice == "11":
+    elif ch == "11":
         word_count = {}
         for m in messages:
             if ":" in m:
@@ -144,7 +139,7 @@ while True:
                 repeated.add(word)
         print("Common repeated words:", repeated)
 
-    elif choice == "13":
+    elif ch  == "13":
         max_avg = 0
         max_user = ""
         for u in user_messages:
@@ -157,7 +152,7 @@ while True:
                 max_user = u
         print(f"User with longest average message: {max_user} (avg {round(max_avg, 2)} words)")
 
-    elif choice == "14":
+    elif ch  == "14":
         name = input("Enter name to check mentions: ").lower()
         count = 0
         for m in messages:
@@ -165,24 +160,24 @@ while True:
                 count += 1
         print(f"Messages mentioning '{name}': {count}")
 
-    elif choice == "15":
+    elif ch  == "15":
         unique = list(set(messages))
         print("Unique messages count:", len(unique))
         for msg in unique:
             print(msg)
 
-    elif choice == "16":
+    elif ch  == "16":
         sorted_msgs = sorted(messages)
         for msg in sorted_msgs:
             print(msg)
 
-    elif choice == "17":
+    elif ch == "17":
         print("Questions in chat:")
         for msg in messages:
             if "?" in msg:
                 print(msg)
 
-    elif choice == "18":
+    elif ch  == "18":
         u1 = input("Enter first user: ").strip()
         u2 = input("Enter second user: ").strip()
         count = 0
@@ -191,14 +186,14 @@ while True:
                 count += 1
         print(f"Reply ratio from {u2} to {u1}: {count} replies")
 
-    elif choice == "19":
+    elif ch  == "19":
         deleted = 0
         for m in messages:
             if "This message was deleted" in m:
                 deleted += 1
         print(f"Deleted messages found: {deleted}")
 
-    elif choice == "0":
+    elif ch == "0":
         print("Exiting program.")
         break
 
